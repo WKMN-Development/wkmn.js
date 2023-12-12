@@ -44,7 +44,7 @@ function createWKMNAtt(subButtonEl) {
   attCloseButton.id = 'wkmn-close-button';
   attCloseButton.className = 'wkmn-exit';
   attCloseButton.role = 'button';
-    attCloseButton.innerHTML = '<span>&times;</span>';
+    attCloseButton.innerHTML = '<span><svg xmlns="http://www.w3.org/2000/svg" height="16" width="16" viewBox="0 0 384 512"><path d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"/></svg></span>';
   attMenu.appendChild(attCloseButton);
   const attMenuImg = document.createElement('img');
   attMenuImg.alt = 'WKMN Logo';
@@ -97,6 +97,13 @@ function createWKMNAtt(subButtonEl) {
   attHideButton.innerText = 'Click here to hide the button for 60 seconds.';
   if (!subButtonEl) {
       attHide.appendChild(attHideButton);
+
+    }
+    else {
+      const attText = document.createElement('span');
+      attText.innerText = 'This website was designed and developed by WKMN Development.';
+      attText.className = 'wkmn-hide-btn-sub';
+      attHide.appendChild(attText);
     }
   attMenu.appendChild(attHide);
   attBg.appendChild(attMenu);
@@ -379,9 +386,11 @@ function createWKMNStyles(){
      top: 10px;
      border: none!important;
 }
- #wkmn-attribution-wrapper .wkmn-exit>span {
-     color: #000;
-   font-size: 1.5rem!important;
+ #wkmn-attribution-wrapper .wkmn-exit>span>svg {
+     fill: #000;
+     height: 1.5rem;
+     width: 1.5rem;
+
 }
  #wkmn-attribution-wrapper .wkmn-menu {
      width: 100%;
@@ -432,8 +441,27 @@ function createWKMNStyles(){
      border: none;
      text-align: left;
 }
+ #wkmn-attribution-wrapper .wkmn-hide-btn-sub {
+     display: inline-flex;
+    /* equivalent to inline-flex */
+     align-items: center;
+    /* equivalent to items-center */
+     font-size: 0.75rem!important;
+    /* equivalent to text-xs */
+     font-weight: normal;
+    /* equivalent to font-normal */
+     color: #7B7B7B!important;
+    /* equivalent to text-gray-500 */
+     margin-top:0.75rem!important;
+     border: none;
+     text-align: left;
+}
  #wkmn-attribution-wrapper .wkmn-hide-btn:hover {
      text-decoration: underline;
+    /* equivalent to hover:underline */
+}
+ #wkmn-attribution-wrapper .wkmn-hide-btn-sub:hover {
+     text-decoration: none;
     /* equivalent to hover:underline */
 }
  #wkmn-attribution-wrapper .wkmn-desc {
@@ -456,8 +484,8 @@ function createWKMNStyles(){
      #wkmn-attribution-wrapper .wkmn-link:hover {
          background-color: #57534e;
     }
-     #wkmn-attribution-wrapper .wkmn-exit>span {
-         color: #fff;
+     #wkmn-attribution-wrapper .wkmn-exit>span>svg {
+         fill: #fff;
     }
      #wkmn-attribution-wrapper .wkmn-menu {
          background-color: #292524 
