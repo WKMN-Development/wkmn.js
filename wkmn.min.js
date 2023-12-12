@@ -44,7 +44,7 @@ function createWKMNAtt(subButtonEl) {
   attCloseButton.id = 'wkmn-close-button';
   attCloseButton.className = 'wkmn-exit';
   attCloseButton.role = 'button';
-  attCloseButton.innerHTML = '<span>âœ•</span>';
+    attCloseButton.innerHTML = '<span>&times;</span>';
   attMenu.appendChild(attCloseButton);
   const attMenuImg = document.createElement('img');
   attMenuImg.alt = 'WKMN Logo';
@@ -892,19 +892,21 @@ function createWKMNStyles(){
 }
 
 createWKMNStyles();
-if (document.querySelector('script[data-wkmn]') === null) {
-  createWKMNAtt();
-}
-else {
-    const scriptWKMN = document.querySelector('script[data-wkmn]');
-  if (scriptWKMN.getAttribute('data-wkmn').length > 0) {
-    if (scriptWKMN.getAttribute('data-wkmn').includes('href')) {
-      scriptWKMN.removeAttribute('href');
-      scriptWKMN.removeAttribute('target');
-    }
-    createWKMNAtt(scriptWKMN.getAttribute('data-wkmn'));
-  }
-  else {
+let wkmnElements = document.querySelectorAll('[data-wkmn]');
+
+if (wkmnElements.length === 0) {
     createWKMNAtt();
-  }
+} else {
+    wkmnElements.forEach((element) => {
+        let wkmnId = element.id;
+        element.style.cursor = "pointer";
+
+        if (element.tagName == "A") {
+            element.removeAttribute("href");
+            element.removeAttribute("target");
+            createWKMNAtt(wkmnId);
+        } else {
+            createWKMNAtt();
+        }
+    });
 }
