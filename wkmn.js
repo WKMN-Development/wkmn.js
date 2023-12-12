@@ -896,6 +896,7 @@ if (document.querySelector('script[data-wkmn]') === null) {
   createWKMNAtt();
 }
 else {
+    const scriptWKMN = document.querySelector('script[data-wkmn]');
   if (scriptWKMN.getAttribute('data-wkmn').length > 0) {
     if (scriptWKMN.getAttribute('data-wkmn').includes('href')) {
       scriptWKMN.removeAttribute('href');
