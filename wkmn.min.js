@@ -95,7 +95,9 @@ function createWKMNAtt(subButtonEl) {
   attHideButton.id = 'hide-att';
   attHideButton.className = 'wkmn-hide-btn';
   attHideButton.innerText = 'Click here to hide the button for 60 seconds.';
-  attHide.appendChild(attHideButton);
+  if (!subButtonEl) {
+      attHide.appendChild(attHideButton);
+    }
   attMenu.appendChild(attHide);
   attBg.appendChild(attMenu);
   attWrapper.appendChild(attBg);
