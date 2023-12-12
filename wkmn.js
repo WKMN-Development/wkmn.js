@@ -44,7 +44,7 @@ function createWKMNAtt(subButtonEl) {
   attCloseButton.id = 'wkmn-close-button';
   attCloseButton.className = 'wkmn-exit';
   attCloseButton.role = 'button';
-  attCloseButton.innerHTML = '<span>✕</span>';
+  attCloseButton.innerHTML = '<span>âœ•</span>';
   attMenu.appendChild(attCloseButton);
   const attMenuImg = document.createElement('img');
   attMenuImg.alt = 'WKMN Logo';
@@ -897,6 +897,10 @@ if (document.querySelector('script[data-wkmn]') === null) {
 }
 else {
   if (scriptWKMN.getAttribute('data-wkmn').length > 0) {
+    if (scriptWKMN.getAttribute('data-wkmn').includes('href')) {
+      scriptWKMN.removeAttribute('href');
+      scriptWKMN.removeAttribute('target');
+    }
     createWKMNAtt(scriptWKMN.getAttribute('data-wkmn'));
   }
   else {
