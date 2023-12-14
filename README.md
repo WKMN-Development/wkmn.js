@@ -1,15 +1,11 @@
-<h1 align="center"><img src="https://github.com/clarkhacks/100Concepts/raw/main/shared/img/header.png" style="width: 100%; max-width: 400px;"/></h1>
-<h3 align="center">I have at max 200 days to publish 100 of my application concepts. Some are fancier than others, join me on my journey to become a better developer.</h3>
+# WKMN Attribution for Websites
 
-## WKMN Attribute JS [See It Live](https://wkmnjs.wkmn.app/)
+For free-tier websites, `WKMN.js` is automatically injected into their primary layout. To ensure a less conspicuous attribution, the script recognizes an anchor tag with specific attributes: `href`, `target`, `data-wkmn`, and `id`.
 
-* Customizable link when clicked.
-* Custom location specification (Left, Right & Top, Bottom)
-* Looks the same on all devices.
+```html
+Designed & Developed by <a href="https://www.wkmn.dev/" target="_blank" id="wkmn-att" data-wkmn="true">WKMN Development</a>
+```
+If you prefer to remove the WKMN Development button from the lower right corner of your website, you have two options:
 
-__Todo:__
-* ✅ Basic Concept
-* ✅ Location Specification
-* ✅ Custom Link
-* ✅ Publish It
-* ✅ CDN
+1. Upgrade to a paid plan.
+2. Add a custom WKMN Attribution somewhere in your footer, similar to the example above.
