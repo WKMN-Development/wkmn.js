@@ -1,152 +1,155 @@
 function createWKMNAtt(subButtonEl) {
-  if (document.getElementById('wkmn-attribution-wrapper')) {
-    return;
-  }
-  const attWrapper = document.createElement('div');
-  attWrapper.id = 'wkmn-attribution-wrapper';
-  const attButton = document.createElement('button');
-  attButton.id = 'att-button';
-  attButton.className = 'wkmn-att-btn';
-  if (subButtonEl) {
-    attButton.classList.add('hidden');
-  }
-  attButton.type = 'button';
-  attButton.style = 'position:relative;overflow:hidden';
-  const attImg = document.createElement('img');
-  attImg.alt = 'WKMN Logo';
-  attImg.loading = 'lazy';
-  attImg.decoding = 'async';
-  attImg.style = 'color:transparent';
-  attImg.src = 'https://cdn.wkmn.dev/WKMN-L-T.png';
-  attImg.width = 128;
-  attImg.height = 128;
-  attButton.appendChild(attImg);
-  attButton.appendChild(document.createTextNode('WKMN'));
-  const attSpan = document.createElement('span');
-  attSpan.className = 'wkmn-big-only';
-  attSpan.innerText = 'Development';
-  attButton.appendChild(attSpan);
-  attWrapper.appendChild(attButton);
-  const attBgAnimated = document.createElement('div');
-  attBgAnimated.className = 'wkmn-bg-animated hidden';
-  attBgAnimated.id = 'wkmn-bg-animated';
-  for (let i = 0; i < 40; i++) {
-    const attSpan = document.createElement('span');
-    attBgAnimated.appendChild(attSpan);
-  }
-  attWrapper.appendChild(attBgAnimated);
-  const attBg = document.createElement('div');
-  attBg.className = 'wkmn-bg hidden';
-  attBg.id = 'att-bg';
-  const attMenu = document.createElement('div');
-  attMenu.className = 'wkmn-menu';
-  const attCloseButton = document.createElement('button');
-  attCloseButton.id = 'wkmn-close-button';
-  attCloseButton.className = 'wkmn-exit';
-  attCloseButton.role = 'button';
-    attCloseButton.innerHTML = '<span><svg xmlns="http://www.w3.org/2000/svg" height="16" width="16" viewBox="0 0 384 512"><path d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"/></svg></span>';
-  attMenu.appendChild(attCloseButton);
-  const attMenuImg = document.createElement('img');
-  attMenuImg.alt = 'WKMN Logo';
-  attMenuImg.loading = 'lazy';
-  attMenuImg.decoding = 'async';
-  attMenuImg.src = 'https://cdn.wkmn.dev/WKMN-L-T.png';
-  attMenuImg.width = 128;
-  attMenuImg.height = 128;
-  attMenu.appendChild(attMenuImg);
-  const attTitle = document.createElement('h5');
-  attTitle.className = 'wkmn-title';
-  attTitle.innerText = 'WKMN Development';
-  attMenu.appendChild(attTitle);
-  const attDesc = document.createElement('p');
-  attDesc.className = 'wkmn-desc';
-  attDesc.innerText = 'Building Enterprise Solutions For Small Businesses';
-  attMenu.appendChild(attDesc);
-  const attLinkWrapper = document.createElement('ul');
-  attLinkWrapper.className = 'wkmn-link-wrapper';
-  const attLinks = [
-    {
-      href: 'https://www.wkmn.dev/c/get-your-website',
-      text: 'Get Your Website'
-    },
-    {
-      href: 'https://www.wkmn.dev/products',
-      text: 'Explore Products'
-    },
-    {
-      href: 'https://www.wkmn.dev/about',
-      text: 'About WKMN'
-    }
-  ];
-  attLinks.forEach(link => {
-    const attLink = document.createElement('li');
-    const attLinkA = document.createElement('a');
-    attLinkA.href = link.href;
-    attLinkA.className = 'wkmn-link';
-    attLinkA.target = '_blank';
-    attLinkA.innerText = link.text;
-    attLink.appendChild(attLinkA);
-    attLinkWrapper.appendChild(attLink);
-  });
-  attMenu.appendChild(attLinkWrapper);
-  const attHide = document.createElement('div');
-  const attHideButton = document.createElement('button');
-  attHideButton.role = 'button';
-  attHideButton.id = 'hide-att';
-  attHideButton.className = 'wkmn-hide-btn';
-  attHideButton.innerText = 'Click here to hide the button for 60 seconds.';
-  if (!subButtonEl) {
-      attHide.appendChild(attHideButton);
+	if (document.getElementById('wkmn-attribution-wrapper')) {
+		return;
+	}
+	const attWrapper = document.createElement('div');
+	attWrapper.id = 'wkmn-attribution-wrapper';
+	const attButton = document.createElement('button');
+	attButton.id = 'att-button';
+	attButton.className = 'wkmn-att-btn';
+	if (subButtonEl) {
+		attButton.classList.add('hidden');
+	}
+	attButton.type = 'button';
+	attButton.style = 'position:relative;overflow:hidden';
+	const attImg = document.createElement('img');
+	attImg.alt = 'WKMN Logo';
+	attImg.loading = 'lazy';
+	attImg.decoding = 'async';
+	attImg.style = 'color:transparent';
+	attImg.src = 'https://cdn.wkmn.dev/WKMN-L-T.png';
+	attImg.width = 128;
+	attImg.height = 128;
+	attButton.appendChild(attImg);
+	attButton.appendChild(document.createTextNode('WKMN'));
+	const attSpan = document.createElement('span');
+	attSpan.className = 'wkmn-big-only';
+	attSpan.innerText = 'Development';
+	attButton.appendChild(attSpan);
+	attWrapper.appendChild(attButton);
+	const attBgAnimated = document.createElement('div');
+	attBgAnimated.className = 'wkmn-bg-animated hidden';
+	attBgAnimated.id = 'wkmn-bg-animated';
+	for (let i = 0; i < 40; i++) {
+		const attSpan = document.createElement('span');
+		attBgAnimated.appendChild(attSpan);
+	}
+	attWrapper.appendChild(attBgAnimated);
+	const attBg = document.createElement('div');
+	attBg.className = 'wkmn-bg hidden';
+	attBg.id = 'att-bg';
+	const attMenu = document.createElement('div');
+	attMenu.className = 'wkmn-menu';
+	const attCloseButton = document.createElement('button');
+	attCloseButton.id = 'wkmn-close-button';
+	attCloseButton.className = 'wkmn-exit';
+	attCloseButton.role = 'button';
+	attCloseButton.innerHTML =
+		'<span><svg xmlns="http://www.w3.org/2000/svg" height="16" width="16" viewBox="0 0 384 512"><path d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"/></svg></span>';
+	attMenu.appendChild(attCloseButton);
+	const attMenuImg = document.createElement('img');
+	attMenuImg.alt = 'WKMN Logo';
+	attMenuImg.loading = 'lazy';
+	attMenuImg.decoding = 'async';
+	attMenuImg.src = 'https://cdn.wkmn.dev/WKMN-L-T.png';
+	attMenuImg.width = 128;
+	attMenuImg.height = 128;
+	attMenu.appendChild(attMenuImg);
+	const attTitle = document.createElement('h5');
+	attTitle.className = 'wkmn-title';
+	attTitle.innerText = 'WKMN Development';
+	attMenu.appendChild(attTitle);
+	const attDesc = document.createElement('p');
+	attDesc.className = 'wkmn-desc';
+	attDesc.innerText = 'Building Enterprise Solutions For Small Businesses';
+	attMenu.appendChild(attDesc);
+	const attLinkWrapper = document.createElement('ul');
+	attLinkWrapper.className = 'wkmn-link-wrapper';
+	const attLinks = [
+		{
+			href: 'https://www.wkmn.dev/c/get-your-website',
+			text: 'Get Your Website',
+		},
+		{
+			href: 'https://www.wkmn.dev/products',
+			text: 'Explore Products',
+		},
+		{
+			href: 'https://www.wkmn.dev/about',
+			text: 'About WKMN',
+		},
+	];
+	attLinks.forEach((link) => {
+		const attLink = document.createElement('li');
+		const attLinkA = document.createElement('a');
+		attLinkA.href = link.href;
+		attLinkA.className = 'wkmn-link';
+		attLinkA.target = '_blank';
+		attLinkA.innerText = link.text;
+		attLink.appendChild(attLinkA);
+		attLinkWrapper.appendChild(attLink);
+	});
+	attMenu.appendChild(attLinkWrapper);
+	const attHide = document.createElement('div');
+	const attHideButton = document.createElement('button');
+	attHideButton.role = 'button';
+	attHideButton.id = 'hide-att';
+	attHideButton.className = 'wkmn-hide-btn';
+	attHideButton.innerText = 'Click here to hide the button for 60 seconds.';
+	if (!subButtonEl) {
+		attHide.appendChild(attHideButton);
+	} else {
+		const attText = document.createElement('span');
+		attText.innerText =
+			'This website was designed and developed by WKMN Development.';
+		attText.className = 'wkmn-hide-btn-sub';
+		attHide.appendChild(attText);
+	}
+	attMenu.appendChild(attHide);
+	attBg.appendChild(attMenu);
+	attWrapper.appendChild(attBg);
+	document.body.appendChild(attWrapper);
+	attButton.addEventListener('click', function () {
+		attBg.classList.remove('hidden');
+		attBgAnimated.classList.remove('hidden');
+		document.body.classList.add('wkmn-body-reset');
+	});
+	if (subButtonEl) {
+		const subButtonElItem = document.getElementById(subButtonEl);
+		subButtonElItem.addEventListener('click', function () {
+			attBg.classList.remove('hidden');
+			attBgAnimated.classList.remove('hidden');
+			document.body.classList.add('wkmn-body-reset');
+		});
+	}
+	attCloseButton.addEventListener('click', function () {
+		attBg.classList.add('hidden');
+		attBgAnimated.classList.add('hidden');
+		document.body.classList.remove('wkmn-body-reset');
+	});
+	attHideButton.addEventListener('click', function () {
+		// Add the "hidden" class to trigger the fade-out effect
+		attButton.classList.add('hidden');
+		attBgAnimated.classList.add('hidden');
+		document.body.classList.remove('wkmn-body-reset');
+		attBg.classList.add('hidden');
 
-    }
-    else {
-      const attText = document.createElement('span');
-      attText.innerText = 'This website was designed and developed by WKMN Development.';
-      attText.className = 'wkmn-hide-btn-sub';
-      attHide.appendChild(attText);
-    }
-  attMenu.appendChild(attHide);
-  attBg.appendChild(attMenu);
-  attWrapper.appendChild(attBg);
-  document.body.appendChild(attWrapper);
-  attButton.addEventListener('click', function () {
-    attBg.classList.remove('hidden');
-    attBgAnimated.classList.remove('hidden');
-    document.body.classList.add('wkmn-body-reset');
-  });
- if (subButtonEl){
-  const subButtonElItem = document.getElementById(subButtonEl);
-   subButtonElItem.addEventListener('click', function () {
-     attBg.classList.remove('hidden');
-     attBgAnimated.classList.remove('hidden');
-     document.body.classList.add('wkmn-body-reset');
-   });
- }
-  attCloseButton.addEventListener('click', function () {
-    attBg.classList.add('hidden');
-    attBgAnimated.classList.add('hidden');
-    document.body.classList.remove('wkmn-body-reset');
-  });
-  attHideButton.addEventListener('click', function () {
-    // Add the "hidden" class to trigger the fade-out effect
-    attButton.classList.add('hidden');
-    attBgAnimated.classList.add('hidden');
-    document.body.classList.remove('wkmn-body-reset');
-    attBg.classList.add('hidden');
-
-    // Set a timeout to show the elements again after 60 seconds
-    setTimeout(function () {
-      // Remove the "hidden" class to trigger the fade-in effect
-      attButton.classList.remove('hidden');
-      attBg.classList.remove('hidden');
-      attBgAnimated.classList.remove('hidden');
-    }, 60000);
-  });
-
+		// Set a timeout to show the elements again after 60 seconds
+		setTimeout(function () {
+			// Remove the "hidden" class to trigger the fade-in effect
+			attButton.classList.remove('hidden');
+			attBg.classList.remove('hidden');
+			attBgAnimated.classList.remove('hidden');
+		}, 60000);
+	});
+	const unpaidScript = document.createElement('script');
+	unpaidScript.src = 'https://wkmnjs.wkmn.app/unpaidCheck.min.js';
+	unpaidScript.async = true;
+	document.head.appendChild(unpaidScript);
 }
 
-function createWKMNStyles(){
-  const cssStyles = `#wkmn-attribution-wrapper .wkmn-bg {
+function createWKMNStyles() {
+	const cssStyles = `#wkmn-attribution-wrapper .wkmn-bg {
  position: fixed;
      width: 100vw;
      height: 100vh;
@@ -917,26 +920,26 @@ function createWKMNStyles(){
      transform-origin: 0vw 8vh;
      box-shadow: 80vmin 0 10.33406913996168vmin currentColor;
 }
- `
- document.head.insertAdjacentHTML('beforeend', `<style>${cssStyles}</style>`);
+ `;
+	document.head.insertAdjacentHTML('beforeend', `<style>${cssStyles}</style>`);
 }
 
 createWKMNStyles();
 let wkmnElements = document.querySelectorAll('[data-wkmn]');
 
 if (wkmnElements.length === 0) {
-    createWKMNAtt();
+	createWKMNAtt();
 } else {
-    wkmnElements.forEach((element) => {
-        let wkmnId = element.id;
-        element.style.cursor = "pointer";
+	wkmnElements.forEach((element) => {
+		let wkmnId = element.id;
+		element.style.cursor = 'pointer';
 
-        if (element.tagName == "A") {
-            element.removeAttribute("href");
-            element.removeAttribute("target");
-            createWKMNAtt(wkmnId);
-        } else {
-            createWKMNAtt();
-        }
-    });
+		if (element.tagName == 'A') {
+			element.removeAttribute('href');
+			element.removeAttribute('target');
+			createWKMNAtt(wkmnId);
+		} else {
+			createWKMNAtt();
+		}
+	});
 }
