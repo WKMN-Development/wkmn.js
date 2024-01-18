@@ -5,12 +5,15 @@ const wkmnPayStyles = `
      font-feature-settings: normal;
      font-variation-settings: normal;
   min-height: 100vh;
+  height: 100vh;
   width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   overflow: hidden;
+  position: absolute;
+  top: 0;
 }
 
 .error-container {
@@ -54,7 +57,7 @@ function isPastDue() {
     wkmnPayMessage.innerText = 'We can\'t display this site at the moment. Please check back later.';
     const wkmnPayOwner = document.createElement('p');
     wkmnPayOwner.classList.add('wkmnPayOwner');
-    wkmnPayOwner.innerText = 'If you are the wkmnPayOwner of this site please click ';
+    wkmnPayOwner.innerText = 'If you are the owner of this site please click ';
     const link = document.createElement('a');
     link.href = 'https://www.wkmn.dev/contact';
     link.innerText = 'here';
@@ -68,4 +71,22 @@ function isPastDue() {
     mainPay.appendChild(errorContainerPay);
     document.querySelector('.wkmn-bg-animated').classList.remove('hidden');
     document.body.appendChild(mainPay);
+    document.body.style.overflow = 'hidden';
     }
+
+function checkIfPastDue(){
+    const wkmnIDMeta = document.querySelector('meta[name="wkmn-x-id"]');
+    const wkmnID = wkmnIDMeta.getAttribute('content');
+   fetch(`https://wkmn-development-default-rtdb.firebaseio.com/embedded_dashboard/${wkmnID}/website_active.json`)
+    .then(response => response.json())
+    .then(data => {
+        if(data === false){
+            isPastDue();
+        }
+    })
+    .catch(err => {
+        console.log(err);
+    })
+}
+
+checkIfPastDue();
